@@ -1,0 +1,145 @@
+.bk-bookshelf {
+  background: #111 url(img/wood.jpg);
+  margin: 0;
+  padding: 0 0 50% 0;
+  position: relative;
+  overflow: hidden;
+  zoom: 1; /* Trigger "hasLayout" in IE */
+}
+
+.bk-bookshelf::before {
+  background: url(img/shelf-left.png);
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: auto;
+  z-index: 1;
+}
+
+.bk-bookshelf::after {
+  background: url(img/shelf-right.png);
+  clear: both;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: auto;
+  z-index: 1;
+}
+
+.bk-bookshelf li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  margin: 10px 2% 40px;
+  width: 12.6%; /* 6 horizontal items (default) */
+}
+
+.bk-bookshelf li::after {
+  background: url(img/shelf-bottom.png);
+  content: '';
+  display: block;
+  position: absolute;
+  right: -64px;
+  bottom: -48px;
+  left: 0;
+  width: auto;
+  height: 64px;
+  z-index: -1;
+}
+
+.bk-bookshelf li:nth-child(6n+1)::after {
+  background: url(img/shelf-bottom.png);
+  content: '';
+  display: block;
+  position: absolute;
+  right: -64px;
+  bottom: -48px;
+  left: -64px;
+  width: auto;
+  height: 64px;
+  z-index: -1;
+}
+
+.bk-bookshelf img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 480px) {
+  .bk-bookshelf li {
+    margin: 10px 5% 40px;
+    width: 23.3%; /* 3 horizontal items (iPhone - Portrait) */
+  }
+  
+  .bk-bookshelf li:nth-child(3n+1)::after {
+    background: url(img/shelf-bottom.png);
+    content: '';
+    display: block;
+    position: absolute;
+    right: -64px;
+    bottom: -48px;
+    left: -64px;
+    width: auto;
+    height: 64px;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .bk-bookshelf li {
+    margin: 10px 4% 40px;
+    width: 17%; /* 4 horizontal items (iPhone - Landscape) */
+  }
+  
+  .bk-bookshelf li:nth-child(4n+1)::after {
+    background: url(img/shelf-bottom.png);
+    content: '';
+    display: block;
+    position: absolute;
+    right: -64px;
+    bottom: -48px;
+    left: -64px;
+    width: auto;
+    height: 64px;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .bk-bookshelf li {
+    margin: 10px 3% 40px;
+    width: 14%; /* 5 horizontal items (iPad - Portrait) */
+  }
+  
+  .bk-bookshelf li:nth-child(5n+1)::after {
+    background: url(img/shelf-bottom.png);
+    content: '';
+    display: block;
+    position: absolute;
+    right: -64px;
+    bottom: -48px;
+    left: -64px;
+    width: auto;
+    height: 64px;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 980px) {
+  .bk-bookshelf li {
+    margin: 10px 2% 40px;
+    width: 12.6%; /* 6 horizontal items (iPad - Landscape) */
+  }
+}
