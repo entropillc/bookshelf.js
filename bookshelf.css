@@ -46,25 +46,13 @@
   width: 12.6%; /* 6 horizontal items (default) */
 }
 
-.bk-bookshelf li::after {
+/* Fallback for browsers that don't support media queries */
+.bk-bookshelf li.bk-first-in-row::after {
   background: url(img/shelf-bottom.png);
   content: '';
   display: block;
   position: absolute;
-  right: -64px;
-  bottom: -48px;
-  left: 0;
-  width: auto;
-  height: 64px;
-  z-index: -1;
-}
-
-.bk-bookshelf li:nth-child(6n+1)::after {
-  background: url(img/shelf-bottom.png);
-  content: '';
-  display: block;
-  position: absolute;
-  right: -64px;
+  right: -2048px;
   bottom: -48px;
   left: -64px;
   width: auto;
@@ -82,13 +70,12 @@
     margin: 10px 5% 40px;
     width: 23.3%; /* 3 horizontal items (iPhone - Portrait) */
   }
-  
   .bk-bookshelf li:nth-child(3n+1)::after {
     background: url(img/shelf-bottom.png);
     content: '';
     display: block;
     position: absolute;
-    right: -64px;
+    right: -2048px;
     bottom: -48px;
     left: -64px;
     width: auto;
@@ -102,13 +89,12 @@
     margin: 10px 4% 40px;
     width: 17%; /* 4 horizontal items (iPhone - Landscape) */
   }
-  
   .bk-bookshelf li:nth-child(4n+1)::after {
     background: url(img/shelf-bottom.png);
     content: '';
     display: block;
     position: absolute;
-    right: -64px;
+    right: -2048px;
     bottom: -48px;
     left: -64px;
     width: auto;
@@ -122,13 +108,12 @@
     margin: 10px 3% 40px;
     width: 14%; /* 5 horizontal items (iPad - Portrait) */
   }
-  
   .bk-bookshelf li:nth-child(5n+1)::after {
     background: url(img/shelf-bottom.png);
     content: '';
     display: block;
     position: absolute;
-    right: -64px;
+    right: -2048px;
     bottom: -48px;
     left: -64px;
     width: auto;
@@ -141,5 +126,17 @@
   .bk-bookshelf li {
     margin: 10px 2% 40px;
     width: 12.6%; /* 6 horizontal items (iPad - Landscape) */
+  }
+  .bk-bookshelf li:nth-child(6n+1)::after {
+    background: url(img/shelf-bottom.png);
+    content: '';
+    display: block;
+    position: absolute;
+    right: -2048px;
+    bottom: -48px;
+    left: -64px;
+    width: auto;
+    height: 64px;
+    z-index: -1;
   }
 }
